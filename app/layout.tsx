@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased pt-16`}>
         <Navbar />
         {children}
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
