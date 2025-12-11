@@ -34,7 +34,6 @@ export default function ContactPage() {
       title: "Address",
       details:
         "K. J. Somaiya College of Engineering, Vidyanagar, Vidyavihar (East), Mumbai-400077, Maharashtra, India",
-      // link to google maps
       url: "https://www.google.com/maps/search/?api=1&query=K.+J.+Somaiya+College+of+Engineering,+Vidyavihar+East",
       delay: "delay-100",
     },
@@ -74,7 +73,6 @@ export default function ContactPage() {
   };
 
   const openCall = (phone: string) => {
-    // use tel: protocol (works on mobile and many desktops)
     window.location.href = `tel:${phone}`;
   };
 
@@ -195,117 +193,46 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
+          {/* Right Column - Embedded Google Form */}
           <div className="relative group">
             {/* Glow effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 via-primary/30 to-cyan-500/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <form
-              onSubmit={handleSubmit}
-              className="relative bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm shadow-2xl border-2 border-primary/20 group-hover:border-primary/50 rounded-3xl p-8 space-y-6 transition-all duration-500"
-            >
-              <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
+            <div className="relative bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm shadow-2xl border-2 border-primary/20 group-hover:border-primary/50 rounded-3xl p-2 transition-all duration-500">
+              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
                 <div className="h-1.5 w-8 bg-gradient-to-r from-cyan-500 to-primary rounded-full"></div>
-                Get In Touch
+                Contact Form
               </h2>
 
-              {/* Full Name */}
-              <div className="group">
-                <label className="block text-sm font-medium text-foreground mb-2 transition-colors duration-300">
-                  Full Name
-                </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField("fullName")}
-                    onBlur={() => setFocusedField(null)}
-                    placeholder="Your name"
-                    className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 focus:shadow-lg focus:shadow-primary/20"
-                    required
-                  />
-                </div>
+              {/* Embedded Google Form iframe */}
+              <div className="w-full h-[820px] rounded-lg overflow-hidden border border-border">
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSd3FrWA1uGwaMZVcTCam2eHlZxz6-tKRlvVVf2RLQTtXWG-CA/viewform?embedded=true"
+                  title="Team ETA Contact Form"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  className="w-full h-full"
+                >
+                  Loading…
+                </iframe>
               </div>
 
-              {/* Email Address */}
-              <div className="group">
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField("email")}
-                    onBlur={() => setFocusedField(null)}
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 focus:shadow-lg focus:shadow-primary/20"
-                    required
-                  />
-                </div>
+              {/* Optional: fallback button to open in new tab */}
+              <div className="mt-4 text-sm text-muted-foreground">
+                Prefer the form in a new tab?{' '}
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSd3FrWA1uGwaMZVcTCam2eHlZxz6-tKRlvVVf2RLQTtXWG-CA/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Open full form
+                </a>
               </div>
-
-              {/* Subject */}
-              <div className="group">
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Subject
-                </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField("subject")}
-                    onBlur={() => setFocusedField(null)}
-                    placeholder="What's this about?"
-                    className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 focus:shadow-lg focus:shadow-primary/20"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Message */}
-              <div className="group">
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Your Message
-                </label>
-                <div className="relative">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField("message")}
-                    onBlur={() => setFocusedField(null)}
-                    placeholder="Tell us more..."
-                    rows={5}
-                    className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 focus:shadow-lg focus:shadow-primary/20 resize-none"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <button type="submit" className="w-full relative group mt-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-cyan-600 rounded-lg blur opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative px-6 py-3 bg-gradient-to-r from-primary to-cyan-600 hover:from-primary/90 hover:to-cyan-700 rounded-lg font-semibold text-white text-center transform group-hover:scale-105 transition-transform duration-300">
-                  {isSubmitted ? "Message Sent! 🚀" : "Send Message"}
-                </div>
-              </button>
-
-              {/* Success Message */}
-              {isSubmitted && (
-                <div className="mt-4 p-4 bg-gradient-to-br from-green-50 to-green-100/50 border border-green-300/70 rounded-lg animate-fade-in">
-                  <p className="text-green-800 text-sm font-medium">
-                    Thanks for reaching out! We'll get back to you soon.
-                  </p>
-                </div>
-              )}
-            </form>
+            </div>
           </div>
         </div>
       </div>
