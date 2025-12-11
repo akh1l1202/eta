@@ -151,7 +151,7 @@ export default function FuelOurMission() {
       key: razorpayKey,
       amount: order.amount, // in currency subunits (paise for INR)
       currency: order.currency,
-      name: "Team Eta - KJSCE",
+      name: "Team Eta - KJSSE",
       description: "Fuel Our Mission - Shell Eco-Marathon 2025",
       image: "/placeholder-logo.png", // Your logo
       order_id: order.id,
@@ -335,7 +335,7 @@ export default function FuelOurMission() {
                   So Good, So Far!
                 </h2>
                 <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                  Team Eta, a dedicated group of students from KJSCE, Mumbai, is
+                  Team Eta, a dedicated group of students from KJSSE, Mumbai, is
                   embarking on an ambitious endeavor to design and construct a
                   high-efficiency vehicle for the prestigious Shell Eco-Marathon
                   competition. With a proven track record in sustainable
@@ -353,7 +353,7 @@ export default function FuelOurMission() {
                   project's significance. With a clear plan and unwavering
                   determination, Team Eta is optimistic about the potential of
                   crowdfunding to propel our project forward and make a meaningful
-                  impact in the Shell Eco-Marathon 2024.
+                  impact in the Shell Eco-Marathon 2026.
                 </p>
               </div>
             </div>
