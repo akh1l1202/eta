@@ -14,16 +14,16 @@ interface CarData {
 
 const cars: CarData[] = [
   {
+    year: 2021,
+    name: 'YUGANT',
+    description: '\'Yugant\' may represent the end of gasoline-powered cars and the dawn of Eco-friendly transportation. It represents the transition to renewable energy which may stimulate development, innovation, and sustainability. It also implies longevity, durability, and the end of an era and the start of a sustainable one.',
+    achievements: ['Sustainable Design', 'Innovation Focus']
+  },
+  {
     year: 2019,
     name: 'MAHIL',
     description: 'The unaccountable efforts put all over the years by every team member finally paid off in 2019 when we introduced our best ever-\'MAHIL\'. This prototype secured the first rank in Shell Eco-Marathon, India 2019 by knocking an unbelievable mileage of 270 kmpl. Also, the first prototype which completed its technical inspection among every other teams and won the safety award.',
     achievements: ['1st Rank SEM India 2019', '270 kmpl Mileage', 'Safety Award Winner']
-  },
-  {
-    year: 2019,
-    name: 'YUGANT',
-    description: '\'Yugant\' may represent the end of gasoline-powered cars and the dawn of Eco-friendly transportation. It represents the transition to renewable energy which may stimulate development, innovation, and sustainability. It also implies longevity, durability, and the end of an era and the start of a sustainable one.',
-    achievements: ['Sustainable Design', 'Innovation Focus']
   },
   {
     year: 2017,
